@@ -1,7 +1,8 @@
 # -* - coding: UTF-8 -* -
 
-import fpgrowth
 import time
+
+import fpgrowth
 
 '''
 load kosarak data from data folder
@@ -11,8 +12,8 @@ start = time.time()
 n = 20000
 with open("./data/kosarak.dat", "rb") as f:
     parsed_dat = [line.split() for line in f.readlines()]
-initSet = fpgrowth.create_init_set(parsed_dat)
-my_fp_tree, my_header_tab = fpgrowth.create_fp_tree(initSet, n)
+init_set = fpgrowth.create_init_set(parsed_dat)
+my_fp_tree, my_header_tab = fpgrowth.create_fp_tree(init_set, n)
 freq_items = []
 fpgrowth.mine_fp_tree(my_fp_tree, my_header_tab, n, set([]), freq_items)
 for x in freq_items:
