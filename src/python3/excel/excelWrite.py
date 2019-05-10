@@ -1,4 +1,6 @@
 # -* - coding: UTF-8 -* -
+import datetime
+
 import xlwt
 
 _root_path_ = "E:/data/python/"
@@ -16,10 +18,10 @@ def export_to_excel(row_list, file_name):
         col = 0
         # 再循环里面list的值，每一列
         for cell_item in row_item:
-            # if (typeof(cell_item)== "datetime")
-            #     sheet.write(row, col, time.strptime(cell_item, "%Y-%m-%d %H:%M:%S"))
-            # else
-            sheet.write(row, col, cell_item)
+            if isinstance(cell_item, datetime.date):
+                sheet.write(row, col, cell_item.strftime("%Y-%m-%d %H:%M:%S"))
+            else:
+                sheet.write(row, col, cell_item)
             col += 1
         row += 1
 
