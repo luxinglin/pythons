@@ -1,27 +1,25 @@
-1.安装编译器，下周PyCharm专业版本软件，通过Active Code的方式进行破解，破解方法同Intelij Idea类似
-2.安装Python开发环境，选用3.7 Windows-64位版本。完成后使用如下命令安装pip和settoools工具。
+### Python Learn
+----
+1. 安装编译器，下周PyCharm专业版本软件，通过Active Code的方式进行破解，破解方法同Intelij Idea类似
+2. 安装Python开发环境，选用3.7 Windows-64位版本。完成后使用如下命令安装pip和settoools工具。
      python -m pip install -U pip setuptools
-3.开发python程序，单文件程序
+3. 开发python程序，单文件程序
     例如：使用python操作influxdb数据库，步骤：
     a）安装相关模块，python -m pip install -U influxdb 
-    b）编写实际程序，参考如下：
-#! /usr/bin/env python
-# -*- coding:utf-8 -*-
+    b）编写实际程序，参考如下：<br/>
+    <code>#! /usr/bin/env python</code><br/>
+    <code># -*- coding:utf-8 -*-</code><br/>
+    <code>from influxdb import InfluxDBClient</code><br/>
+    <code>client = InfluxDBClient("10.200.132.161", 8086, "admin", "admin", "1_79e4ca664aa046638b7480064559a10d")</code> # 初始化<br/>
+    <code>result = client.query("show measurements;")</code> # 显示数据库中的表<br/>
+    <code>print("Result: {0}".format(result))</code><br/>
+    <code>result = client.query("select * from hourly.cpu_usage_average limit 100;")</code><br/>
+    <code>print("Result: {0}".format(result))</code><br/>
 
-from influxdb import InfluxDBClient
-
-client = InfluxDBClient("10.200.132.161", 8086, "admin", "admin", "1_79e4ca664aa046638b7480064559a10d") # 初始化
-
-result = client.query("show measurements;") # 显示数据库中的表
-print("Result: {0}".format(result))
-
-result = client.query("select * from hourly.cpu_usage_average limit 100;")
-print("Result: {0}".format(result))
-
-4.开发Python Web程序，多文件程序
+4. 开发Python Web程序，多文件程序
 
 
---------------------------------------------------------
+-----
 一步一步教你搭建IPython notebook
 
 python有多强大就不多说了，自己百度
