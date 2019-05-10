@@ -1,4 +1,4 @@
-# coding:utf-8
+# -* - coding: UTF-8 -* -
 class TreeNode:
     def __init__(self, name_value, num_occur, parent_node):
         self.name = name_value

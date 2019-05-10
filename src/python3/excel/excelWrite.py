@@ -1,6 +1,5 @@
 # -* - coding: UTF-8 -* -
 import xlwt
-import time
 
 _root_path_ = "E:/data/python/"
 
@@ -17,10 +16,10 @@ def export_to_excel(row_list, file_name):
         col = 0
         # 再循环里面list的值，每一列
         for cell_item in row_item:
-            if (typeof(cell_item)== "datetime")
-                sheet.write(row, col, time.strptime(cell_item, "%Y-%m-%d %H:%M:%S"))
-            else
-                sheet.write(row, col, cell_item)
+            # if (typeof(cell_item)== "datetime")
+            #     sheet.write(row, col, time.strptime(cell_item, "%Y-%m-%d %H:%M:%S"))
+            # else
+            sheet.write(row, col, cell_item)
             col += 1
         row += 1
 
@@ -30,11 +29,11 @@ def export_to_excel(row_list, file_name):
 
 # 只能写不能读
 students = [
-    ['姓名', '年龄', '性别', '分数'],
-    ['mary', 20, '女', 89.9],
-    ['mary', 20, '女', 89.9],
-    ['mary', 20, '女', 89.9],
-    ['mary', 20, '女', 89.9]
+    ['姓名', '年龄', '性别', '分数', '出生日期'],
+    ['mary1', 20, '女', 89.9, '1988-01-02'],
+    ['mary2', 20, '女', 89.9, '1988-01-03'],
+    ['mary3', 20, '女', 89.9, '1988-01-04'],
+    ['mary4', 20, '女', 89.9, '1988-01-05']
 ]
 
 if __name__ == '__main__':
